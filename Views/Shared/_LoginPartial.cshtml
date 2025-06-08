@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<Users> SignInManager;
+
+<ul class="navbar-nav ms-auto">
+	@if(SignInManager.IsSignedIn(User))
+	{
+		<li>
+			<a class="btn" asp-area="" style="background-color:#F57F2E" asp-controller="Account" asp-action="Logout">Sair</a>
+		</li>
+	}
+	else
+	{
+		<li>
+			<a class="btn link-light me-1" asp-area="" style="background-color:#F57F2E" asp-controller="Account" asp-action="Login">Entrar</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-primary md-1" asp-area=""asp-controller="Account" asp-action="Register">Registrar</a>
+		</li>
+	}
+</ul>

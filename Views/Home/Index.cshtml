@@ -1,0 +1,44 @@
+﻿@model IEnumerable<EspaçoVerdeLogin.Models.Residuo>
+@{
+    ViewData["Title"] = "Espaço Verde";
+}
+
+<div class="bg-light py-2">
+    <div class="container d-flex justify-content-around">
+        <button class="btn btn-outline-secondary">Material de Ferro</button>
+        <button class="btn btn-outline-secondary">Material de Alumínio</button>
+        <button class="btn btn-outline-secondary">Material de Metal</button>
+    </div>
+</div>
+
+
+
+<h2 class="text-center m-3">Resíduos Disponíveis</h2>
+
+<div class="row">
+    @foreach (var prod in Model)
+    {
+        <div class="col-md-4 mt-4">
+            <form asp-action="Delete" asp-controller="Product" method="post">
+                <input type="hidden" asp-for="@prod.ID_Residuo" name="id" />
+                <div class="card">
+                    <img src="@Url.Content("~/vendor/imgs/" + prod.ImgUrl)" class="card-img-top fixed-image-height" alt="@prod.Nome" />
+                    <div class="card-body">
+                        <h5 class="card-title">Material: @prod.Nome</h5>
+                        <p class="card-text">Empresa: @prod.Usuario.RazaoSocial</p>
+                        <p class="card-text">@prod.Quantidade (Kg)</p>
+                        <p class="card-text">@prod.Localizacao.Estado @prod.Localizacao.Cidade</p>
+                        @if (prod.Transacao != null)
+                        {
+                            <span>R$ @prod.Transacao.Preco_Final</span>
+                        }
+                        else
+                        {
+                            <span>Não vendido</span>
+                        }
+                    </div>
+                </div>
+            </form>
+        </div>
+    }
+</div>
