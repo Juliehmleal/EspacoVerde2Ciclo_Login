@@ -1,0 +1,41 @@
+﻿@model EspaçoVerdeLogin.Models.EditUserViewModel // Mude o modelo da View
+
+@{
+    ViewData["Title"] = "Editar Usuário";
+}
+
+<h2>Editar Usuário</h2>
+
+<form asp-action="EditarUsuario" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" /> @* O ID precisa ser enviado para identificar o usuário no POST *@
+
+    <div class="form-group">
+        <label asp-for="RazaoSocial" class="m-2"></label>
+        <input asp-for="RazaoSocial" class="form-control" />
+        <span asp-validation-for="RazaoSocial" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CNPJ" class="m-2"></label>
+        <input asp-for="CNPJ" class="form-control" />
+        <span asp-validation-for="CNPJ" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email" class="m-2"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+        <a asp-controller="Home" asp-action="Usuarios" class="btn btn-danger mt-3 ms-2">Cancelar</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

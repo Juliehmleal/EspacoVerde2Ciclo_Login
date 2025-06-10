@@ -28,10 +28,10 @@
 							<td>@usuario.CNPJ</td>
 							<td>@usuario.Email</td>
 							<td>
-								<a class="btn btn-primary" asp-action="Edit" asp-route-id="@usuario.Id">Editar</a>
+								<a class="btn btn-primary" asp-controller="Home" asp-action="EditarUsuario" asp-route-id="@usuario.Id">Editar</a>
 							</td>
 							<td>
-								<a class="btn btn-danger" asp-action="Delete" asp-route-id="@usuario.Id">Excluir</a>
+								<a class="btn btn-danger" asp-controller="Home" asp-action="ExcluirUsuario" asp-route-id="@usuario.Id">Excluir</a>
 							</td>
 						</tr>
 					}
