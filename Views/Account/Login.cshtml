@@ -17,7 +17,7 @@
             <p>Deseja voltar para a página inicial?</p>
             <a asp-controller="Home" asp-action="Index" class="text-white btn btn-warning mb-3 align-content-center">Home</a>
             <p>Não possui conta? Faça seu cadastro</p>
-            <a asp-controller="Login" asp-action="Cadastro" class="text-white btn btn-warning mb-3 align-content-center">Cadastro</a>
+            <a asp-controller="Account" asp-action="Register" class="text-white btn btn-warning mb-3 align-content-center">Cadastro</a>
         </div>
 
         <!-- Painel Direito -->
@@ -48,9 +48,9 @@
                     </label>
                 </div>
 
-                <input type="submit" value="Login" class="btn btn-success w-100 p-2" />
+                <input type="submit" value="Login" class="btn btn-warning w-100 p-2" />
                 <p class="text-center mt-2">
-                    Don't have an account? <a asp-controller="Account" asp-action="Register" class="text-decoration-none">Register</a>
+                    Não possui uma conta? <a asp-controller="Account" asp-action="Register" class="text-decoration-none">Register</a>
                 </p>
                 <div class="text-center">
                     <a asp-controller="Home" asp-action="Index" class="text-decoration-none mt-3">Back</a>

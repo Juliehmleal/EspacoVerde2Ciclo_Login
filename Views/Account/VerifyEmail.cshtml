@@ -6,8 +6,8 @@
     Layout = "_AccountLayout";
 }
 
-<div class="container my-5">
-        <div class="col-lg-7 bg-light p-5 d-flex flex-column justify-content-center">
+<div class="container my-5 shadow">
+        <div class="col-lg-12 bg-light p-5 d-flex flex-column justify-content-center">
             <h2 class="text-center mb-4">Verificando Email</h2>
             <form asp-action="VerifyEmail" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -17,12 +17,12 @@
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
 
-                <input type="submit" value="Verify" class="btn btn-success w-100 p-2" />
+                <input type="submit" value="Verificar" class="btn btn-success w-100 p-2" />
                 <p class="text-center mt-2">
-                    Don't have an account? <a asp-controller="Account" asp-action="Register" class="text-decoration-none">Register</a>
+                    Não Possui uma conta? <a asp-controller="Account" asp-action="Register" class="text-decoration-none">Registrar</a>
                 </p>
                 <div class="text-center">
-                    <a asp-controller="Home" asp-action="Index" class="text-decoration-none mt-3">Back</a>
+                    <a asp-controller="Home" asp-action="Index" class="text-decoration-none mt-3">voltar</a>
                 </div>
             </form>
         </div>
