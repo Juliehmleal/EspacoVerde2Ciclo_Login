@@ -38,6 +38,7 @@ namespace EspaçoVerdeLogin.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Administrador")]
         [Authorize]
         [HttpGet]
         public  async Task<IActionResult> Usuarios()
@@ -45,6 +46,7 @@ namespace EspaçoVerdeLogin.Controllers
             return View(await _context.Users.ToListAsync());
         }
 
+        [Authorize(Roles = "Administrador")]
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> EditarUsuario(string id)
@@ -75,7 +77,7 @@ namespace EspaçoVerdeLogin.Controllers
             return View(model); // Passe o ViewModel para a View
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditarUsuario(string id, EditUserViewModel model)
@@ -120,7 +122,7 @@ namespace EspaçoVerdeLogin.Controllers
             return View(model);
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> ExcluirUsuario(string id)
@@ -149,6 +151,7 @@ namespace EspaçoVerdeLogin.Controllers
             return View(model); // Passa o DeleteUserViewModel para a View
         }
 
+        [Authorize(Roles = "Administrador")]
         [Authorize]
         [HttpPost, ActionName("ExcluirUsuario")]
         [ValidateAntiForgeryToken]

@@ -1,3 +1,5 @@
+using EspaçoVerdeLogin.Data.Seed;
+using EspaçoVerdeLogin.Data;
 using EspaçoVerdeLogin.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +35,26 @@ namespace EspaçoVerdeLogin
                 .AddDefaultTokenProviders();
 
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    // Certifique-se de que o AppDbContext está disponível
+                    var context = services.GetRequiredService<AppDbContext>();
+                    // Opcional: Aplicar migrações pendentes automaticamente
+                    // context.Database.Migrate();
+
+                    // Chama o método Initialize para semear os dados
+                    SeedData.Initialize(services);
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "Um erro ocorreu ao semear o banco de dados.");
+                }
+            }
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<Users> SignInManager;
+@inject UserManager<Users> UserManager;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,6 +13,24 @@
     <link rel="stylesheet" href="~/EspaçoVerdeLogin.styles.css" asp-append-version="true" />
 </head>
 <body>
+
+    @{
+        // Injetar UserManager e SignInManager diretamente na _Layout
+        // Isso permite que você acesse as informações do usuário logado aqui.
+        var userManager = Context.RequestServices.GetRequiredService<UserManager<EspaçoVerdeLogin.Models.Users>>();
+        var signInManager = Context.RequestServices.GetRequiredService<SignInManager<EspaçoVerdeLogin.Models.Users>>();
+
+        // Variável para verificar se o usuário é Administrador
+        bool isAdmin = false;
+        if (signInManager.IsSignedIn(User))
+        {
+            var currentUser = await userManager.GetUserAsync(User);
+            if (currentUser != null)
+            {
+                isAdmin = await userManager.IsInRoleAsync(currentUser, "Administrador");
+            }
+        }
+    }
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #4A7F4F;">
             <div class="container-fluid">
@@ -25,9 +47,12 @@
                         <li class="nav-item">
                             <a class="nav-link active text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" asp-area="" asp-controller="Home" asp-action="Usuarios">Usuários</a>
-                        </li>
+                        @if (isAdmin)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" asp-area="" asp-controller="Home" asp-action="Usuarios">Usuários</a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link active text-white" asp-area="" asp-controller="Home"
                                asp-action="SobreNos">Sobre Nós</a>

@@ -1,11 +1,18 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @inject SignInManager<Users> SignInManager;
+@inject UserManager<Users> UserManager;
 
-<ul class="navbar-nav ms-auto">
+<ul class="navbar-nav ms-auto d-flex align-items-center">
 	@if(SignInManager.IsSignedIn(User))
 	{
+		<li class="nav-item link-light me-3">
+			@{
+				var currentUser = await UserManager.GetUserAsync(User);
+			}
+			Olá, @currentUser.RazaoSocial
+		</li>
 		<li>
-			<a class="btn link-light" asp-area="" style="background-color:#F57F2E" asp-controller="Account" asp-action="Logout">Sair</a>
+			<a class="nav-item btn link-light md-1 " asp-area="" style="background-color:#F57F2E" asp-controller="Account" asp-action="Logout">Sair</a>
 		</li>
 	}
 	else
