@@ -41,32 +41,6 @@ namespace EspaçoVerdeLogin.Migrations
                     b.HasKey("ID_Localizacao");
 
                     b.ToTable("Localizacoes");
-
-                    b.HasData(
-                        new
-                        {
-                            ID_Localizacao = 1,
-                            Cidade = "Araraquara",
-                            Estado = "SP"
-                        },
-                        new
-                        {
-                            ID_Localizacao = 2,
-                            Cidade = "Matão",
-                            Estado = "SP"
-                        },
-                        new
-                        {
-                            ID_Localizacao = 3,
-                            Cidade = "São Carlos",
-                            Estado = "SP"
-                        },
-                        new
-                        {
-                            ID_Localizacao = 4,
-                            Cidade = "Ribeirão Preto",
-                            Estado = "SP"
-                        });
                 });
 
             modelBuilder.Entity("EspaçoVerdeLogin.Models.Residuo", b =>
@@ -109,9 +83,9 @@ namespace EspaçoVerdeLogin.Migrations
                     b.HasData(
                         new
                         {
-                            ID_Residuo = 1,
+                            ID_Residuo = -1,
                             ID_Localizacao = 1,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "aco_inox.webp",
                             Nome = "Aço Inox",
                             PrecoKg = 5.50m,
@@ -119,9 +93,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 2,
+                            ID_Residuo = -2,
                             ID_Localizacao = 2,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "ferro_fundido.webp",
                             Nome = "Ferro Fundido",
                             PrecoKg = 1.20m,
@@ -129,9 +103,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 3,
+                            ID_Residuo = -3,
                             ID_Localizacao = 3,
-                            ID_Usuario = "1c446a24-6366-4295-a2a3-3ae57de78fb8",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "aluminio.webp",
                             Nome = "Alumínio",
                             PrecoKg = 3.80m,
@@ -139,9 +113,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 4,
+                            ID_Residuo = -4,
                             ID_Localizacao = 4,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "cobre.webp",
                             Nome = "Cobre",
                             PrecoKg = 8.20m,
@@ -149,9 +123,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 5,
+                            ID_Residuo = -5,
                             ID_Localizacao = 1,
-                            ID_Usuario = "f745a310-7c58-4fb5-82f8-05db5a5de659",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "latao.webp",
                             Nome = "Latão",
                             PrecoKg = 4.50m,
@@ -159,9 +133,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 6,
+                            ID_Residuo = -6,
                             ID_Localizacao = 2,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "zinco.webp",
                             Nome = "Zinco",
                             PrecoKg = 2.10m,
@@ -169,9 +143,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 7,
+                            ID_Residuo = -7,
                             ID_Localizacao = 3,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "chumbo.webp",
                             Nome = "Chumbo",
                             PrecoKg = 1.80m,
@@ -179,9 +153,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 9,
+                            ID_Residuo = -9,
                             ID_Localizacao = 1,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "niquel.webp",
                             Nome = "Níquel",
                             PrecoKg = 12.00m,
@@ -189,9 +163,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 10,
+                            ID_Residuo = -10,
                             ID_Localizacao = 2,
-                            ID_Usuario = "f745a310-7c58-4fb5-82f8-05db5a5de659",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "titanio.webp",
                             Nome = "Titânio",
                             PrecoKg = 25.00m,
@@ -199,9 +173,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 11,
+                            ID_Residuo = -11,
                             ID_Localizacao = 3,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "bronze.webp",
                             Nome = "Bronze",
                             PrecoKg = 6.80m,
@@ -209,9 +183,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 12,
+                            ID_Residuo = -12,
                             ID_Localizacao = 4,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "aco_carbono.webp",
                             Nome = "Aço Carbono",
                             PrecoKg = 0.90m,
@@ -219,9 +193,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 13,
+                            ID_Residuo = -13,
                             ID_Localizacao = 1,
-                            ID_Usuario = "f745a310-7c58-4fb5-82f8-05db5a5de659",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "magnesio.webp",
                             Nome = "Magnésio",
                             PrecoKg = 4.20m,
@@ -229,9 +203,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 14,
+                            ID_Residuo = -14,
                             ID_Localizacao = 2,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "cromo.webp",
                             Nome = "Cromo",
                             PrecoKg = 7.10m,
@@ -239,9 +213,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 15,
+                            ID_Residuo = -15,
                             ID_Localizacao = 3,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "manganes.webp",
                             Nome = "Manganês",
                             PrecoKg = 1.50m,
@@ -249,9 +223,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 17,
+                            ID_Residuo = -17,
                             ID_Localizacao = 1,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "molibdenio.webp",
                             Nome = "Molibdênio",
                             PrecoKg = 28.00m,
@@ -259,9 +233,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 18,
+                            ID_Residuo = -18,
                             ID_Localizacao = 2,
-                            ID_Usuario = "f745a310-7c58-4fb5-82f8-05db5a5de659",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "vanadio.webp",
                             Nome = "Vanádio",
                             PrecoKg = 15.50m,
@@ -269,9 +243,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 19,
+                            ID_Residuo = -19,
                             ID_Localizacao = 3,
-                            ID_Usuario = "452ef72f-2445-4c17-b890-aa127b7275ca",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "aco_inox.webp",
                             Nome = "Aço Inox",
                             PrecoKg = 5.70m,
@@ -279,9 +253,9 @@ namespace EspaçoVerdeLogin.Migrations
                         },
                         new
                         {
-                            ID_Residuo = 20,
+                            ID_Residuo = -20,
                             ID_Localizacao = 4,
-                            ID_Usuario = "1c446a24-6366-4295-a2a3-3ae57de78fb8",
+                            ID_Usuario = "9eada58b-13f5-45d3-be4b-c4d49fff8b2a",
                             ImgUrl = "aluminio.webp",
                             Nome = "Alumínio",
                             PrecoKg = 4.00m,
@@ -318,16 +292,6 @@ namespace EspaçoVerdeLogin.Migrations
                         .IsUnique();
 
                     b.ToTable("Transacoes");
-
-                    b.HasData(
-                        new
-                        {
-                            ID_Transacao = 1,
-                            Data_Transacao = new DateTime(2025, 6, 11, 9, 25, 2, 100, DateTimeKind.Local).AddTicks(8387),
-                            ID_Comprador = "452ef72f-2445-4c17-b890-aa127b7275ca",
-                            ID_Residuo = 1,
-                            Preco_Final = 550m
-                        });
                 });
 
             modelBuilder.Entity("EspaçoVerdeLogin.Models.Users", b =>

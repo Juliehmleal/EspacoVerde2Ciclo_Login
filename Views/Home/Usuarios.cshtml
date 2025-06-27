@@ -41,7 +41,7 @@
                             <td>@usuario.CNPJ</td>
                             <td>@usuario.Email</td>
                             <td>
-                                @if (isCurrentUser)
+                                @if (isCurrentUser || usuario.Email == "residuos@gmail.com")
                                 {
                                     // Se for o próprio usuário, desabilita o botão
                                     <button class="btn btn-primary" disabled>Editar</button>
@@ -53,7 +53,7 @@
                                 }
                             </td>
                             <td>
-                                @if (isCurrentUser)
+                                @if (isCurrentUser || usuario.Email == "residuos@gmail.com")
                                 {
                                     // Se for o próprio usuário, desabilita o botão
                                     <button class="btn btn-danger" disabled>Excluir</button>
